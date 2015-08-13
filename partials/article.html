@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-lg-2">
+        <img class="article-image img-thumbnail" ng-src="{{article.image}}" />
+    </div>
+    <div class="col-lg-10">
+        <h2>{{article.title}}</h2>
+        <p>{{article.fulltext}}</p>
+        <a ng-click="complain(article.id)">Пожаловаться на новость</a>
+        <div class="pull-right">Дата публикации: {{article.date | strToDate | date:'dd.MM.yyyy'}}</div>
+    </div>
+</div>
