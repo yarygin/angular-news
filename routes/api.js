@@ -7,7 +7,7 @@ router.route('/api/news/:id')
     .get(article.get)
     .put(article.create)
     .post(article.update)
-    .delete(article.delete);
+    .delete(article.remove);
 
 router.route('/api/news/')
     .get(function(req, res, next) {
