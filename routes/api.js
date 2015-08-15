@@ -7,9 +7,7 @@ router.route('/api/news/:id')
     .get(article.get)
     .put(article.create)
     .post(article.update)
-    .delete(function(req, res, next) {
-        next(new Error('not implemented'));
-    });
+    .delete(article.delete);
 
 router.route('/api/news/')
     .get(function(req, res, next) {
