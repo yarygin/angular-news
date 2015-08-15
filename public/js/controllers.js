@@ -8,6 +8,7 @@ siteControllers.controller('NewsListCtrl', ['$scope', 'News', function ($scope, 
 siteControllers.controller('ArticleCtrl', ['$scope', 'News', '$routeParams', function ($scope, News, $routeParams) {
     var id = $routeParams.articleId;
     $scope.article = News.get({articleId: id});
+    console.log($scope.article);
     $scope.complain = function(id) {
         alert("Вы пожаловались на новость \""+$scope.article.title+"\"");
     }

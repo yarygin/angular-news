@@ -21,6 +21,7 @@ module.exports = function (db) {
 
     // Один документ
     var get = function (req, res, next) {
+        console.log('get anticle');
     try{
         var id = mongoose.Types.ObjectId(req.params.id);
     }
@@ -28,7 +29,7 @@ module.exports = function (db) {
         res.send(400);
     }
     var id = req.params.id;
-        Article.find({_id: id}, function (err, data) {
+        Article.findOne({_id: id}, function (err, data) {
             if (err) next(err);
             if (data) {
                 res.send(data);

@@ -6,6 +6,13 @@ siteServices.factory('News', ['$resource',
             query: {
                 method:'GET',
                 isArray:true
+            },
+            get: {
+                method:'GET',
+                params: {
+                    id:'articleId'
+                },
+                isArray:false
             }
         });
     }]);
