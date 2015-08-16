@@ -1,13 +1,13 @@
 var app = require('express')();
 var nconf = require('nconf');
+var http = require('http').Server(app);
+var mongoose = require('mongoose');
+var routers = [require('./routes/app'), require('./routes/api')];
+
 nconf.argv()
     .env().file({ file: './config/main.json' });
-
-var http = require('http').Server(app);
-var routers = [require('./routes/app'), require('./routes/api')];
 var appPort = nconf.get('application:port');
 var dbUri = nconf.get('mongoose:uri');
-var mongoose = require('mongoose');
 
 mongoose.connect(dbUri);
 mongoose.connection
