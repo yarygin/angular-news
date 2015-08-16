@@ -12,6 +12,10 @@ site.config(['$routeProvider',
             templateUrl: 'partials/news-list.html',
             controller: 'NewsListCtrl'
         })
+        .when('/news/add', {
+            templateUrl: 'partials/article-add.html',
+            controller: 'AddArticleCtrl'
+        })
         .when('/news/:articleId', {
             templateUrl: 'partials/article.html',
             controller: 'ArticleCtrl'

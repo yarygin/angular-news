@@ -13,3 +13,18 @@ siteControllers.controller('ArticleCtrl', ['$scope', 'News', '$routeParams', fun
         alert("Вы пожаловались на новость \""+$scope.article.title+"\"");
     }
 }]);
+
+siteControllers.controller('AddArticleCtrl', ['$scope', 'News', function ($scope, News) {
+    var article = {
+        title:"",
+        date:new Date(),
+        image:"",
+        previewText:"",
+        fullText:""
+    };
+    $scope.article = article;
+    $scope.insert = function(article) {
+        $scope.result = News.save({body:article});
+        console.log($scope.result);
+    }
+}]);

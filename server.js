@@ -3,6 +3,7 @@ var nconf = require('nconf');
 var http = require('http').Server(app);
 var mongoose = require('mongoose');
 var routers = [require('./routes/app'), require('./routes/api')];
+var bodyParser = require('body-parser');
 
 nconf.argv()
     .env().file({ file: './config/main.json' });
@@ -16,6 +17,9 @@ mongoose.connection
         console.log('connection opened');
     });
 
+// TODO: Не забыть добавить body-parser в зависимости, если заживёт
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(routers);
 
 http.listen(appPort, function(){

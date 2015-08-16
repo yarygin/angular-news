@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 module.exports = function (db) {
 
     var ArticleSchema = new mongoose.Schema({
-        id: Number,
         title: String,
         date: Date,
         preview: String,
@@ -28,7 +27,6 @@ module.exports = function (db) {
     catch (e){
         res.send(400);
     }
-    var id = req.params.id;
         Article.findOne({_id: id}, function (err, data) {
             if (err) next(err);
             if (data) {
@@ -41,6 +39,7 @@ module.exports = function (db) {
 
     // Создаем документ
     var create = function (req, res, next) {
+        //TODO: разобраться с body
         Article.create(req.body, function (err, data) {
             if (err) {
                 next(err);
@@ -77,6 +76,7 @@ module.exports = function (db) {
 
   return {
     model : Article,
+    shema: ArticleSchema,
     list  : list,
     get   : get,
     create: create,

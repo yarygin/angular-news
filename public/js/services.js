@@ -13,6 +13,10 @@ siteServices.factory('News', ['$resource',
                     id:'articleId'
                 },
                 isArray:false
+            },
+            save: {
+                method:'POST',
+                isArray:false
             }
         });
     }]);
