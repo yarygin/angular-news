@@ -39,7 +39,6 @@ module.exports = function (db) {
 
     // Создаем документ
     var create = function (req, res, next) {
-        //TODO: разобраться с body
         Article.create(req.body, function (err, data) {
             if (err) {
                 next(err);

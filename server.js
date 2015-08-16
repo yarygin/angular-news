@@ -17,7 +17,6 @@ mongoose.connection
         console.log('connection opened');
     });
 
-// TODO: Не забыть добавить body-parser в зависимости, если заживёт
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(routers);

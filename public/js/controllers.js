@@ -17,14 +17,14 @@ siteControllers.controller('ArticleCtrl', ['$scope', 'News', '$routeParams', fun
 siteControllers.controller('AddArticleCtrl', ['$scope', 'News', function ($scope, News) {
     var article = {
         title:"",
-        date:new Date(),
+        date: (new Date()),
         image:"",
-        previewText:"",
-        fullText:""
+        preview:"",
+        fulltext:""
     };
     $scope.article = article;
     $scope.insert = function(article) {
-        $scope.result = News.save({body:article});
+        $scope.result = News.save(article);
         console.log($scope.result);
     }
 }]);
