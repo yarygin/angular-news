@@ -20,6 +20,10 @@ site.config(['$routeProvider',
             templateUrl: 'partials/article.html',
             controller: 'ArticleCtrl'
         })
+        .when('/news/:articleId/edit', {
+            templateUrl: 'partials/article-edit.html',
+            controller: 'EditArticleCtrl'
+        })
         .otherwise({
             redirectTo: '/news'
         });

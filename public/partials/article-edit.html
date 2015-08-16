@@ -1,7 +1,6 @@
 <div class="row">
     <form>
         <a href="#/news/">Назад к списку</a>
-            <div ng-show="article._id" class="alert alert-success" role="alert">Добавилось</div>
             <div class="form-group">
                 <label>Заголовок</label>
                 <input ng-model="article.title" type="text" class="form-control" placeholder="Заголовок">
@@ -22,7 +21,7 @@
                 <label>Полный текст</label>
                 <textarea ng-model="article.fulltext" class="form-control"></textarea>
             </div>
-            <button type="button" class="btn btn-primary" ng-hide="article._id" ng-click="insert(article)">Сохранить</button>
+            <button type="button" class="btn btn-primary" ng-click="update(article)">Сохранить</button>
         </div>
     </form>
 </div>
