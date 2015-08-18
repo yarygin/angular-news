@@ -1,6 +1,12 @@
+<div class="row news-filter">
+    <div class="col-lg-12">
+        <a class="btn btn-primary" href="#/news/">Назад к списку</a>
+        <div ng-show="result" class="alert alert-success" role="alert">Отредактировано</div>
+    </div>
+</div>
 <div class="row">
+    <div class="col-lg-12">
     <form>
-        <a href="#/news/">Назад к списку</a>
             <div class="form-group">
                 <label>Заголовок</label>
                 <input ng-model="article.title" type="text" class="form-control" placeholder="Заголовок">
@@ -24,4 +30,5 @@
             <button type="button" class="btn btn-primary" ng-click="update(article)">Сохранить</button>
         </div>
     </form>
+    </div>
 </div>

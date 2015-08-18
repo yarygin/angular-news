@@ -2,16 +2,13 @@ var siteServices = angular.module('siteServices', ['ngResource']);
 
 siteServices.factory('News', ['$resource',
     function($resource){
-        return $resource('/api/news/:id', {}, {
+        return $resource('/api/news/:id', {id: '@id'}, {
             query: {
                 method:'GET',
                 isArray:true
             },
             get: {
                 method:'GET',
-                params: {
-                    id:'id'
-                },
                 isArray:false
             },
             save: {
@@ -20,16 +17,10 @@ siteServices.factory('News', ['$resource',
             },
             update: {
                 method:'PUT',
-                params: {
-                    id:'id'
-                },
                 isArray:false
             },
             delete: {
                 method:'DELETE',
-                params: {
-                    id:'id'
-                },
                 isArray:false
             }
         });

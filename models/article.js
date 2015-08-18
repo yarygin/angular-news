@@ -48,17 +48,16 @@ module.exports = function (db) {
 
     // Обновляем документ
     var update = function (req, res, next) {
-        console.log(req.body);
         try{var id = mongoose.Types.ObjectId(req.params.id)}
         catch (e){res.send(400)}
-        //Article.update({_id: id}, {$set: req.body}, function (err, numberAffected, data) {
-        //    if (err) next(err);
-        //    if (numberAffected) {
-        //        res.send(200);
-        //    } else {
-        //        res.send(404);
-        //    }
-        //})
+        Article.update({_id: id}, {$set: req.body}, function (err, numberAffected, data) {
+            if (err) next(err);
+            if (numberAffected) {
+                res.send(200);
+            } else {
+                res.send(404);
+            }
+        })
     };
 
   // Удаляем документ
