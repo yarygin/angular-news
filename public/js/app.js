@@ -2,7 +2,8 @@ var site = angular.module('site', [
     'ngRoute',
     'siteControllers',
     'siteFilters',
-    'siteServices'
+    'siteServices',
+    'loadingStatus'
 ]);
 
 site.config(['$routeProvider', '$locationProvider',
