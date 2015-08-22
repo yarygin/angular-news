@@ -29,4 +29,14 @@ site.config(['$routeProvider', '$locationProvider',
         .otherwise({
             redirectTo: '/news'
         });
-    }]);
+    }]).directive('article', function() {
+    return {
+        restrict: 'E',
+        templateUrl: +'/directives/article.html',
+        replace: true,
+        // передача двух атрибутов из attrs в область видимости шаблона
+        scope: {
+            article:'@'
+        }
+    }
+});

@@ -26,8 +26,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
     .use(bodyParser.json())
     .use(allowCrossDomain)
     .use(routers)
+    // для чпу
     .all('/*', function(req, res) {
-        res.sendfile(__dirname+'/public/index.html');
+        res.sendFile(__dirname+'/public/index.html');
     });
 
 http.listen(appPort, function(){
