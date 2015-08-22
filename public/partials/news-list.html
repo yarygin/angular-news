@@ -1,6 +1,6 @@
 <div class="row news-filter">
     <div class="col-lg-10">
-        <a class="btn btn-primary" href="#/news/add">Добавить</a>
+        <a class="btn btn-primary" href="/news/add">Добавить</a>
     </div>
     <div class="col-lg-2">
         <select class="form-control" ng-model="orderNewsDate">
@@ -11,10 +11,10 @@
 </div>
 <div class="row article" ng-repeat="article in news | orderBy:orderNewsDate">
     <div class="col-lg-2">
-        <a ng-href="#/news/{{article._id}}"><img class="article-image img-thumbnail" ng-src="{{article.image}}" /></a>
+        <a ng-href="/news/{{article._id}}"><img class="article-image img-thumbnail" ng-src="{{article.image}}" /></a>
     </div>
     <div class="col-lg-10">
-        <a ng-href="#/news/{{article._id}}"><h2>{{article.title}}</h2></a>
+        <a ng-href="/news/{{article._id}}"><h2>{{article.title}}</h2></a>
         <h3 class="pull-right">{{article.date | strToDate | date:'dd.MM.yyyy'}}</h3>
         <p>{{article.preview}}</p>
     </div>
