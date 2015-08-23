@@ -32,11 +32,20 @@ site.config(['$routeProvider', '$locationProvider',
     }])
     //TODO:Understand templateUrl
     .directive('article', function() {
-    return {
-        restrict: 'E',
-        templateUrl: '../directives/article2.html',
-        replace: true,
-        // передача двух атрибутов из attrs в область видимости шаблона
-        scope: false
-    }
-});
+        return {
+            restrict: 'E',
+            templateUrl: '../directives/article-anons.html',
+            replace: true
+        }
+    })
+    //TODO:Understand templateUrl
+    .directive('datewidget', function() {
+        return {
+            restrict: 'E',
+            scope: {
+                date:"@"
+            },
+            templateUrl: '../directives/date-widget.html',
+            replace: true
+        }
+    });

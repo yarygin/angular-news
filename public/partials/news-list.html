@@ -13,9 +13,11 @@
     <div class="col-lg-2">
         <a ng-href="/news/{{article._id}}"><img class="article-image img-thumbnail" ng-src="{{article.image}}" /></a>
     </div>
-    <div class="col-lg-10">
+    <div class="col-lg-8">
         <a ng-href="/news/{{article._id}}"><h2>{{article.title}}</h2></a>
-        <h3 class="pull-right">{{article.date | strToDate | date:'dd.MM.yyyy'}}</h3>
         <p>{{article.preview}}</p>
+    </div>
+    <div class="col-lg-2">
+        <h3><datewidget date="{{article.date}}" /></h3>
     </div>
 </div>
