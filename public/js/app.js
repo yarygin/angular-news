@@ -1,8 +1,8 @@
-var site = angular.module('site', [
+var site = angular.module('main.site', [
     'ngRoute',
-    'siteControllers',
+    'newsControllers',
     'siteFilters',
-    'siteServices',
+    'newsServices',
     'loadingStatus'
 ]);
 
@@ -15,15 +15,15 @@ site.config(['$routeProvider', '$locationProvider',
             controller: 'NewsController'
         })
         .when('/news/add', {
-            templateUrl: 'partials/article-add.html',
+            templateUrl: 'partials/news-article-add.html',
             controller: 'ArticleAddController'
         })
         .when('/news/:articleId', {
-            templateUrl: 'partials/article.html',
+            templateUrl: 'partials/news-article.html',
             controller: 'ArticleController'
         })
         .when('/news/:articleId/edit', {
-            templateUrl: 'partials/article-edit.html',
+            templateUrl: 'partials/news-article-edit.html',
             controller: 'ArticleEditController'
         })
         .otherwise({

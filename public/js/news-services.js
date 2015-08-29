@@ -1,6 +1,6 @@
-var siteServices = angular.module('siteServices', ['ngResource']);
+var newsServices = angular.module('newsServices', ['ngResource']);
 
-siteServices.factory('News', ['$resource',
+newsServices.factory('News', ['$resource',
     function($resource){
         return $resource('/api/news/:id', {id: '@id'}, {
             query: {
