@@ -1,10 +1,8 @@
 var site = angular.module('main.site', [
-    'loadingStatus',
-    'siteFilters',
-    'siteRoutes'
-]);
-
-site
+        'loadingStatus',
+        'siteFilters',
+        'siteRoutes'
+    ])
     .directive('ngDateWidget', function() {
         return {
             restrict: 'AE',
@@ -17,7 +15,7 @@ site
     })
     .directive('ngMessage', function() {
         return {
-            restrict: 'E',
+            restrict: 'AE',
             scope: {
                 message:"@"
             },

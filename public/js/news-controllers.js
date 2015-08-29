@@ -1,9 +1,9 @@
 var newsControllers = angular.module('newsControllers', ['newsServices']);
 
 newsControllers
-    .controller('NewsController', ['$scope', 'News', function ($scope, News) {
+    .controller('NewsController', ['$scope', 'News', '$rootScope', function ($scope, News, $rootScope) {
         $scope.news = News.query();
-        $scope.message = "ASDF";
+        $rootScope.message = "ASDF";
     }])
     .controller('ArticleController', ['$scope', 'News', '$routeParams', '$location', function ($scope, News, $routeParams, $location) {
         var id = $routeParams.articleId;
