@@ -1,9 +1,8 @@
-var newsControllers = angular.module('newsControllers', []);
+var newsControllers = angular.module('newsControllers', ['newsServices']);
 
 newsControllers
     .controller('NewsController', ['$scope', 'News', function ($scope, News) {
         $scope.news = News.query();
-        $scope.orderNewsDate = '-date';
         $scope.message = "ASDF";
     }])
     .controller('ArticleController', ['$scope', 'News', '$routeParams', '$location', function ($scope, News, $routeParams, $location) {

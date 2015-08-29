@@ -3,7 +3,7 @@
         <a class="btn btn-primary" href="/news/add">Добавить</a>
     </div>
     <div class="col-lg-2">
-        <select class="form-control" ng-model="orderNewsDate">
+        <select class="form-control" ng-init="orderNewsDate='-date'" ng-model="orderNewsDate">
             <option value="date">Сначала старые</option>
             <option value="-date">Сначала новые</option>
         </select>
