@@ -3,23 +3,6 @@ angular.module('loadingStatus', [])
     .config(function($httpProvider) {
         $httpProvider.interceptors.push('loadingStatusInterceptor');
     })
-
-    //.directive('loadingStatusMessage', function() {
-    //    return {
-    //        link: function($scope, $element, attrs) {
-    //            var show = function() {
-    //                $element.css('display', 'block');
-    //            };
-    //            var hide = function() {
-    //                $element.css('display', 'none');
-    //            };
-    //            $scope.$on('loadingStatusActive', show);
-    //            $scope.$on('loadingStatusInactive', hide);
-    //            hide();
-    //        }
-    //    };
-    //})
-
     .factory('loadingStatusInterceptor', function($q, $rootScope) {
         return {
             request: function(config) {
@@ -31,7 +14,9 @@ angular.module('loadingStatus', [])
                 return response || $q.when(response);
             },
             responseError: function(rejection) {
-                //console.log("Error!",rejection);
+                console.log("Error!",rejection);
+                console.log("scope!",$rootScope);
+                $rootScope.message = "ERROR!!!";
                 return $q.reject(rejection);
             }
         };

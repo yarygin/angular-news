@@ -1,11 +1,12 @@
 var siteControllers = angular.module('siteControllers', []);
 
-siteControllers.controller('NewsCtrl', ['$scope', 'News', function ($scope, News) {
+siteControllers.controller('NewsController', ['$scope', 'News', function ($scope, News) {
     $scope.news = News.query();
     $scope.orderNewsDate = '-date';
+    $scope.message = "ASDF";
 }]);
 
-siteControllers.controller('ArticleCtrl', ['$scope', 'News', '$routeParams', '$location', function ($scope, News, $routeParams, $location) {
+siteControllers.controller('ArticleController', ['$scope', 'News', '$routeParams', '$location', function ($scope, News, $routeParams, $location) {
     var id = $routeParams.articleId;
     $scope.result=false;
     News.get({id: id}, function(data){
@@ -26,7 +27,7 @@ siteControllers.controller('ArticleCtrl', ['$scope', 'News', '$routeParams', '$l
     };
 }]);
 
-siteControllers.controller('ArticleEditCtrl', ['$scope', 'News', '$routeParams', function ($scope, News, $routeParams) {
+siteControllers.controller('ArticleEditController', ['$scope', 'News', '$routeParams', function ($scope, News, $routeParams) {
     var id = $routeParams.articleId;
     News.get({id: id}, function(article){
         $scope.article = article;
@@ -51,8 +52,7 @@ siteControllers.controller('ArticleEditCtrl', ['$scope', 'News', '$routeParams',
     };
 }]);
 
-siteControllers.controller('ArticleAddCtrl', ['$scope', 'News', '$location', function ($scope, News, $location) {
-    console.log("!!!!!!");
+siteControllers.controller('ArticleAddController', ['$scope', 'News', '$location', function ($scope, News, $location) {
     var article = {
         title:"",
         date: new Date(),

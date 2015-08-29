@@ -12,40 +12,41 @@ site.config(['$routeProvider', '$locationProvider',
         $routeProvider
         .when('/news', {
             templateUrl: 'partials/news-list.html',
-            controller: 'NewsCtrl'
+            controller: 'NewsController'
         })
-            .when('/news/add', {
-                templateUrl: 'partials/article-add.html',
-                controller: 'ArticleAddCtrl'
-            })
+        .when('/news/add', {
+            templateUrl: 'partials/article-add.html',
+            controller: 'ArticleAddController'
+        })
         .when('/news/:articleId', {
             templateUrl: 'partials/article.html',
-            controller: 'ArticleCtrl'
+            controller: 'ArticleController'
         })
         .when('/news/:articleId/edit', {
             templateUrl: 'partials/article-edit.html',
-            controller: 'ArticleEditCtrl'
+            controller: 'ArticleEditController'
         })
         .otherwise({
             redirectTo: '/news'
         });
     }])
-    //TODO:Understand templateUrl
-    .directive('article', function() {
+    .directive('ngDateWidget', function() {
         return {
-            restrict: 'E',
-            templateUrl: '../directives/article-anons.html',
-            replace: true
-        }
-    })
-    //TODO:Understand templateUrl
-    .directive('datewidget', function() {
-        return {
-            restrict: 'E',
+            restrict: 'AE',
             scope: {
                 date:"@"
             },
             templateUrl: '../directives/date-widget.html',
             replace: true
         }
+    })
+    .directive('ngMessage', function() {
+        return {
+            restrict: 'E',
+            scope: {
+                message:"@"
+            },
+            templateUrl: '../directives/message.html',
+            replace: true
+        };
     });
