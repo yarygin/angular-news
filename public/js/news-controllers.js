@@ -3,7 +3,7 @@ var newsControllers = angular.module('newsControllers', ['newsServices']);
 newsControllers
     .controller('NewsController', ['$scope', 'News', '$rootScope', function ($scope, News, $rootScope) {
         $scope.news = News.query();
-        $rootScope.message = "ASDF";
+        $rootScope.messages.push({text: "ASDF", class:"alert alert-success"});
     }])
     .controller('ArticleController', ['$scope', 'News', '$routeParams', '$location', function ($scope, News, $routeParams, $location) {
         var id = $routeParams.articleId;

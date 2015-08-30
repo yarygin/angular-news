@@ -43,7 +43,7 @@ module.exports = function (db) {
                 next(err);
             }
             res.send(data);
-        });
+        });asdf
     };
 
     // Обновляем документ

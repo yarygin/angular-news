@@ -16,7 +16,7 @@ angular.module('loadingStatus', [])
             responseError: function(rejection) {
                 console.log("Error!",rejection);
                 console.log("scope!",$rootScope);
-                $rootScope.message = "ERROR!!!";
+                $rootScope.messages.push({text: "ERROR!", class:"alert alert-danger"});
                 return $q.reject(rejection);
             }
         };

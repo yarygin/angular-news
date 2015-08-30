@@ -7,7 +7,7 @@ var site = angular.module('main.site', [
         return {
             restrict: 'AE',
             scope: {
-                date:"@"
+                "date":"@"
             },
             templateUrl: '../directives/date-widget.html',
             replace: true
@@ -17,7 +17,8 @@ var site = angular.module('main.site', [
         return {
             restrict: 'AE',
             scope: {
-                message:"@"
+                "message":"@",
+                "class":"@"
             },
             templateUrl: '../directives/message.html',
             replace: true
