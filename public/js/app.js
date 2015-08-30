@@ -1,5 +1,5 @@
 var site = angular.module('main.site', [
-        'loadingStatus',
+        'siteServices',
         'siteFilters',
         'siteRoutes'
     ])

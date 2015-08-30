@@ -1,9 +1,10 @@
-var newsControllers = angular.module('newsControllers', ['newsServices']);
+var newsControllers = angular.module('newsControllers', ['newsServices', 'siteServices']);
 
 newsControllers
-    .controller('NewsController', ['$scope', 'News', '$rootScope', function ($scope, News, $rootScope) {
+    .controller('NewsController', ['$scope', 'News', '$rootScope', 'messagesService', function ($scope, News, $rootScope, messagesService) {
         $scope.news = News.query();
-        $rootScope.messages.push({text: "ASDF", class:"alert alert-success"});
+        messagesService.showMessage("asdf");
+        //$rootScope.messages.push({text: "ASDF", class:"alert alert-success"});
     }])
     .controller('ArticleController', ['$scope', 'News', '$routeParams', '$location', function ($scope, News, $routeParams, $location) {
         var id = $routeParams.articleId;
